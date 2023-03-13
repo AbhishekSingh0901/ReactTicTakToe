@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-zinc-100;
+}
+
+header {
+  @apply fixed top-0 w-full md:px-16 px-4 py-3 flex justify-center md:justify-between items-center bg-white shadow-lg;
+}
+
+h1 {
+  @apply font-bold font-sans text-center md:text-left  uppercase text-4xl bg-gradient-to-tr from-rose-800 to-rose-600 text-transparent bg-clip-text cursor-pointer;
+}
