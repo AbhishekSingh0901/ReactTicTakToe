@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Square from "./Square";
 
 const calculateWinner = (squares) => {
@@ -21,9 +20,7 @@ const calculateWinner = (squares) => {
   return null;
 };
 
-const Board = () => {
-  const [xIsNext, setXIsNext] = useState(false);
-  const [squares, setSquares] = useState(Array(9).fill(null));
+const Board = ({ xIsNext, squares, onPlay }) => {
   const handleClick = (i) => {
     if (squares[i] || calculateWinner(squares)) return;
     const nextSquares = squares.slice();
@@ -32,8 +29,7 @@ const Board = () => {
     } else {
       nextSquares[i] = "O";
     }
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares);
   };
 
   const winner = calculateWinner(squares);
@@ -48,7 +44,7 @@ const Board = () => {
   }
   return (
     <>
-      <h2 className="w-fit text-center text-4xl mt-60 mb-16 font-medium mx-auto px-10 py-3 rounded-xl text-white bg-gradient-to-tl  from-rose-900 via-rose-700 to-rose-500 ">
+      <h2 className="w-48 md:w-72 text-center text-3xl md:text-4xl mb-8 font-medium mx-auto py-3 rounded-xl text-white bg-gradient-to-tl  from-rose-900 via-rose-700 to-rose-500 ">
         {status}
       </h2>
       <div className="grid grid-cols-3 gap-1 mx-auto w-48 h-48 md:w-72 md:h-72 bg-gradient-to-tl from-rose-900 via-rose-700 to-rose-500">

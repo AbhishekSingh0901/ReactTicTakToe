@@ -11,5 +11,5 @@ header {
 }
 
 h1 {
-  @apply font-bold font-sans text-center md:text-left  uppercase text-4xl bg-gradient-to-tr from-rose-800 to-rose-600 text-transparent bg-clip-text cursor-pointer;
+  @apply font-bold font-sans text-center md:text-left  uppercase md:text-5xl text-4xl bg-gradient-to-tr from-rose-800 to-rose-600 text-transparent bg-clip-text cursor-pointer;
 }
